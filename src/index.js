@@ -25,14 +25,14 @@ for (var i = 0, chr; i < list.length; i++) {
 function getWholeCharAndI(str, i) {
   var code = str.charCodeAt(i);
 
-  if (Number.isNaN(code)) {
+  if (isNaN(code)) {
     return ''; // Position not found
   }
   if (code < 0xD800 || code > 0xDFFF) {
     return [str.charAt(i), i]; // Normal character, keeping 'i' the same
   }
 
-  // High surrogate (could change last hex to 0xDB7F to treat high private 
+  // High surrogate (could change last hex to 0xDB7F to treat high private
   // surrogates as single characters)
   if (0xD800 <= code && code <= 0xDBFF) {
     if (str.length <= (i + 1)) {
