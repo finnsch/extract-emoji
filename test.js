@@ -24,8 +24,20 @@ describe('extract-emoji', () => {
 
   describe('extractEmoji', () => {
 
-    it('should return 1 emoji', () => {
-      expect(extractEmoji('that was 5 😋 fun!')).to.be.deep.equal(['😋']);
+    it('should return 1 face emoji', () => {
+      expect(extractEmoji('that was fun 😃!')).to.be.deep.equal(['😃']);
+    });
+
+    it('should return 1 flag emoji', () => {
+      expect(extractEmoji('Lang lebe 🇩🇪!')).to.be.deep.equal(['🇩🇪']);
+    });
+
+    it('should return 2 emojis with skin tones', () => {
+      expect(extractEmoji('🙎🏾 and 👱🏻 are friends')).to.be.deep.equal(['🙎🏾', '👱🏻']);
+    });
+
+    it('should return 1 heart emoji', () => {
+      expect(extractEmoji('I ❤️ you!️')).to.be.deep.equal(['❤️']);
     });
 
     it('should return multiple emoji', () => {
