@@ -33,6 +33,6 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
-    "spliddit": "git://github.com/finnsch/spliddit.git#heart-fix"
+    "spliddit": "git://github.com/finnsch/spliddit.git#victoryhand-fix"
   }
 }
